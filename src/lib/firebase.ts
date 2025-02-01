@@ -4,12 +4,14 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || 'demo-mode',
-  authDomain: "social-bites.firebaseapp.com",
-  projectId: "social-bites",
-  storageBucket: "social-bites.appspot.com",
-  messagingSenderId: import.meta.env.VITE_FIREBASE_SENDER_ID || 'demo-mode',
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || 'demo-mode'
+  apiKey: "AIzaSyCWfoNPl2TQke0v9YuBSWJxQRU9PWvvVXo",
+  authDomain: "social-bite-skofficial.firebaseapp.com",
+  databaseURL: "https://social-bite-skofficial-default-rtdb.firebaseio.com",
+  projectId: "social-bite-skofficial",
+  storageBucket: "social-bite-skofficial.appspot.com",
+  messagingSenderId: "239722707022",
+  appId: "1:239722707022:web:57d9b173f2163e85be2b1f",
+  measurementId: "G-EJE8L74022"
 };
 
 // Initialize Firebase only if we have valid credentials
