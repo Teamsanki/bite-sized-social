@@ -8,8 +8,8 @@ const firebaseConfig = {
   authDomain: "social-bites.firebaseapp.com",
   projectId: "social-bites",
   storageBucket: "social-bites.appspot.com",
-  messagingSenderId: "your-sender-id",
-  appId: "your-app-id"
+  messagingSenderId: import.meta.env.VITE_FIREBASE_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
