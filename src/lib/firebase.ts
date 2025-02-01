@@ -14,11 +14,6 @@ const firebaseConfig = {
   measurementId: "G-EJE8L74022"
 };
 
-// Initialize Firebase only if we have valid credentials
-if (!firebaseConfig.apiKey || firebaseConfig.apiKey === 'demo-mode') {
-  console.warn('Firebase API key not found. Authentication features will not work.');
-}
-
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
