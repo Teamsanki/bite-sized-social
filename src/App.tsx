@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import SplashScreen from "./components/SplashScreen";
 import AuthPage from "./components/auth/AuthPage";
+import { FirebaseProvider } from "./contexts/FirebaseContext";
 
 const queryClient = new QueryClient();
 
@@ -11,12 +12,14 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {showSplash ? (
-        <SplashScreen onComplete={() => setShowSplash(false)} />
-      ) : (
-        <AuthPage />
-      )}
-      <Toaster />
+      <FirebaseProvider>
+        {showSplash ? (
+          <SplashScreen onComplete={() => setShowSplash(false)} />
+        ) : (
+          <AuthPage />
+        )}
+        <Toaster />
+      </FirebaseProvider>
     </QueryClientProvider>
   );
 };
