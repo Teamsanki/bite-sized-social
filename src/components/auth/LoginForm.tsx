@@ -23,9 +23,12 @@ const LoginForm = () => {
         description: "You have successfully logged in.",
       });
     } catch (error: any) {
+      console.error("Login error:", error);
       toast({
         title: "Error",
-        description: error.message || "Failed to login. Please try again.",
+        description: error.message === "Firebase: Error (auth/user-not-found)." 
+          ? "No account found with this email. Please sign up first."
+          : error.message || "Failed to login. Please try again.",
         variant: "destructive",
       });
     } finally {

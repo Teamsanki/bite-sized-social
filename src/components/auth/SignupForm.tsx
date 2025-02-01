@@ -28,6 +28,7 @@ const SignupForm = () => {
         description: "Your account has been created successfully.",
       });
     } catch (error: any) {
+      console.error("Signup error:", error);
       toast({
         title: "Error",
         description: error.message || "Failed to create account. Please try again.",
@@ -68,6 +69,7 @@ const SignupForm = () => {
           onChange={(e) => setPassword(e.target.value)}
           className="w-full"
           required
+          minLength={6}
         />
       </div>
       <Button 
